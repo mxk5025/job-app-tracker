@@ -1,3 +1,7 @@
 .App {
   text-align: center;
 }
+
+.status-list-container {
+  display: flex;
+}

@@ -1,4 +1,4 @@
-.CreateButton form {
+.CreateForm form {
   display: flex;
   flex-direction:column;
 }
