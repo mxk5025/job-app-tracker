@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import CreateForm from './CreateForm';
 
-export default function CreateJobApp() {
+export default function CreateJobApp({ status, addJobApp }) {
   const [showForm, setShowForm] = useState(false);
 
   return (
@@ -9,9 +10,14 @@ export default function CreateJobApp() {
       <button type="button" onClick={(e) => setShowForm(!showForm)}>
         Create Form
       </button>
-      { showForm &&
-        <CreateForm />
-      }
+      { showForm
+        && <CreateForm status={status} addJobApp={addJobApp} />}
     </div>
   );
 }
+
+
+CreateJobApp.propTypes = {
+  status: PropTypes.string.isRequired,
+  addJobApp: PropTypes.func.isRequired,
+};

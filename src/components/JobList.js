@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import JobApp from './JobApp';
 import './JobList.css';
+import CreateJobApp from './CreateJobApp';
 
-export default function JobList({ jobs, status }) {
+export default function JobList({ jobs, status, addJobApp }) {
   return (
     <div className="JobList">
       <h2>{status}</h2>
+      <CreateJobApp status={status} addJobApp={addJobApp} />
       <ul>
         { jobs.filter((job) => job.status === status).map((job) => (
           <JobApp
@@ -32,4 +34,5 @@ JobList.propTypes = {
     date: PropTypes.string.isRequired,
   })).isRequired,
   status: PropTypes.string.isRequired,
+  addJobApp: PropTypes.func.isRequired,
 };

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './CreateForm.css';
+import PropTypes from 'prop-types';
 
 
-export default function CreateForm() {
+export default function CreateForm({ status, addJobApp }) {
   const [company, setCompany] = useState('');
   const [position, setPosition] = useState('');
   const [description, setDescription] = useState('');
@@ -21,6 +22,13 @@ export default function CreateForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    addJobApp({
+      company,
+      position,
+      description,
+      status,
+      date: '09/21/19',
+    });
   };
 
   return (
@@ -62,3 +70,8 @@ export default function CreateForm() {
     </div>
   );
 }
+
+CreateForm.propTypes = {
+  status: PropTypes.string.isRequired,
+  addJobApp: PropTypes.func.isRequired,
+};
