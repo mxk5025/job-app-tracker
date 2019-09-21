@@ -15,6 +15,10 @@
   align-items: center;
 }
 
+.DescriptionContainer textarea {
+  width: 24vw;
+}
+
 .SubmitButton {
   display: flex;
   flex-direction: column;

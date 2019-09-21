@@ -55,7 +55,6 @@ export default function CreateForm({ status, addJobApp }) {
           Description
           <textarea
             rows="6"
-            cols="50"
             type="text"
             name="Description"
             value={description}
