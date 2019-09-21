@@ -7,3 +7,8 @@
 .JobApp ul {
   padding: 0;
 }
+
+#description {
+  overflow-y: auto;
+  height: 48pt;
+}

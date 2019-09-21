@@ -15,15 +15,23 @@ export default function JobApp({
     <li className="JobApp" style={{ backgroundColor: color }}>
       <ul>
         <li>
-          <b>Company</b>
+          <b>Company:&nbsp;</b>
           <span id="tabbed">{company}</span>
         </li>
         <li>
-          <b>Position</b>
+          <b>Position:&nbsp;</b>
           <span id="tabbed">{position}</span>
         </li>
-        <li>{date}</li>
-        <li>{description}</li>
+        <li>
+          <b>Date:&nbsp;</b>
+          <span id="tabbed">{date}</span>
+        </li>
+        <li onClick={e => {e.target.style={overflowY: "hidden",
+        height: "auto"}; console.log(e.target)}} onBlur={e => {e.target.style={overflowY: "auto",
+        height: "48pt"}}} >
+          <b>Description:&nbsp;</b>
+          <p id="description">{description}</p>
+        </li>
       </ul>
     </li>
   );
