@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import JobList from './components/JobList';
-import CreateForm from './components/CreateForm';
-import CreateButton from './components/CreateButton';
 import './App.css';
 
 
@@ -40,11 +38,11 @@ export default function App() {
   const [statusLists] = useState([
     'Applied', 'Rejected', 'Interview', 'Offer',
   ]);
+  const [jobApps, setJobApps] = useState([]);
 
   return (
     <div className="App">
-      <CreateButton />
-      <CreateForm />
+      <h1>Job Application Tracker</h1>
       <div className="status-list-container">
         { statusLists.map((statusList) => (
           <JobList
