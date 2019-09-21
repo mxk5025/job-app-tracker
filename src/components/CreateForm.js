@@ -15,7 +15,10 @@ export default function CreateForm() {
         </div>
         <div className="DescriptionContainer">
           Description
-          <input type="text" name="Description" />
+          <textarea rows="6" cols="50" type="text" name="Description">
+          Enter text here...
+            {' '}
+          </textarea>
         </div>
         <div className="SubmitButton">
           <input type="submit" value="Submit" />
