@@ -16,7 +16,6 @@ export default function CreateJobApp({ status, addJobApp }) {
   );
 }
 
-
 CreateJobApp.propTypes = {
   status: PropTypes.string.isRequired,
   addJobApp: PropTypes.func.isRequired,

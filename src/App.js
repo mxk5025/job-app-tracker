@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import JobList from './components/JobList';
 import './App.css';
 
@@ -40,10 +40,10 @@ export default function App() {
   ]);
   const [jobApps, setJobApps] = useState([]);
 
-  const addJobApp = (jobApp) => {
+  const addJobApp = useCallback((jobApp) => {
     const copyJobApps = [...jobApps, jobApp];
     setJobApps(copyJobApps);
-  };
+  }, [jobApps, setJobApps]);
 
   return (
     <div className="App">

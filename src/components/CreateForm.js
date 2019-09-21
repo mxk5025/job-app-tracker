@@ -1,26 +1,25 @@
-import React, { useState } from 'react';
-import './CreateForm.css';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-
+import './CreateForm.css';
 
 export default function CreateForm({ status, addJobApp }) {
   const [company, setCompany] = useState('');
   const [position, setPosition] = useState('');
   const [description, setDescription] = useState('');
 
-  const handleCompany = (e) => {
+  const handleCompany = useCallback((e) => {
     setCompany(e.target.value);
-  };
+  }, []);
 
-  const handlePosition = (e) => {
+  const handlePosition = useCallback((e) => {
     setPosition(e.target.value);
-  };
+  }, []);
 
-  const handleDescription = (e) => {
+  const handleDescription = useCallback((e) => {
     setDescription(e.target.value);
-  };
+  }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
     addJobApp({
       company,
@@ -29,7 +28,7 @@ export default function CreateForm({ status, addJobApp }) {
       status,
       date: '09/21/19',
     });
-  };
+  }, [addJobApp, company, position, description, status]);
 
   return (
     <div className="CreateForm">

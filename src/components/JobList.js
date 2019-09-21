@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CreateJobApp from './CreateJobApp';
 import JobApp from './JobApp';
 import './JobList.css';
-import CreateJobApp from './CreateJobApp';
 
 export default function JobList({ jobs, status, addJobApp }) {
   return (
