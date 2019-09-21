@@ -1,21 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import JobApp from './JobApp';
+import './JobList.css';
 
 export default function JobList({ jobs, status }) {
   return (
-    <ul className="JobList">
-      { jobs.filter((job) => job.status === status).map((job) => (
-        <JobApp
-          key={job.company + job.position}
-          company={job.company}
-          position={job.position}
-          description={job.description}
-          status={job.status}
-          date={job.date}
-        />
-      ))}
-    </ul>
+    <div className="JobList">
+      <h2>{status}</h2>
+      <ul>
+        { jobs.filter((job) => job.status === status).map((job) => (
+          <JobApp
+            key={job.company + job.position}
+            company={job.company}
+            position={job.position}
+            description={job.description}
+            status={job.status}
+            date={job.date}
+          />
+        ))}
+      </ul>
+    </div>
   );
 }
 

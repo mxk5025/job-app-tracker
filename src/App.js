@@ -17,7 +17,7 @@ const mockApps = [
     company: 'Google',
     position: 'Software Engineer II',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    status: 'Denied',
+    status: 'Rejected',
     date: '09/21/19',
   },
   {
@@ -38,20 +38,22 @@ const mockApps = [
 
 export default function App() {
   const [statusLists] = useState([
-    'Applied', 'Denied', 'Interview', 'Offer',
+    'Applied', 'Rejected', 'Interview', 'Offer',
   ]);
 
   return (
     <div className="App">
       <CreateButton />
       <CreateForm />
-      { statusLists.map((statusList) => (
-        <JobList
-          key={statusList}
-          jobs={mockApps}
-          status={statusList}
-        />
-      ))}
+      <div className="status-list-container">
+        { statusLists.map((statusList) => (
+          <JobList
+            key={statusList}
+            jobs={mockApps}
+            status={statusList}
+          />
+        ))}
+      </div>
     </div>
   );
 }
