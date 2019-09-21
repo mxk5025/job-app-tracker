@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import JobList from './components/JobList';
+import CreateForm from './components/CreateForm';
+import CreateButton from './components/CreateButton';
 import './App.css';
 
 
@@ -42,6 +44,8 @@ export default function App() {
 
   return (
     <div className="App">
+      <CreateForm/>
+      <CreateButton/>
       { statusLists.map(statusList =>
           <JobList
             key={statusList}
