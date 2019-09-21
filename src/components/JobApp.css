@@ -1,0 +1,9 @@
+.JobApp {
+  padding: 10px;
+  border: 1px;
+  border-style: solid;
+}
+
+.JobApp ul {
+  padding: 0;
+}

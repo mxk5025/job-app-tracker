@@ -13,11 +13,11 @@ export default function CreateForm({ status, addJobApp, setShowForm }) {
   const [showError, setShowError] = useState(false);
 
   const getDate = useCallback(() => {
-    let today = new Date();
-    let dd = String(today.getDate()).padStart(2, '0');
-    let mm = String(today.getMonth() + 1).padStart(2, '0');
-    let yyyy = today.getFullYear();
-    return mm + '/' + dd + '/' + yyyy;
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const yyyy = today.getFullYear();
+    return `${mm}/${dd}/${yyyy}`;
   }, []);
 
   const handleCompany = useCallback((e) => {
