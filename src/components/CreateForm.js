@@ -12,6 +12,14 @@ export default function CreateForm({ status, addJobApp, setShowForm }) {
   const [description, setDescription] = useState('');
   const [showError, setShowError] = useState(false);
 
+  const getDate = useCallback(() => {
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0');
+    let yyyy = today.getFullYear();
+    return mm + '/' + dd + '/' + yyyy;
+  }, []);
+
   const handleCompany = useCallback((e) => {
     setCompany(e.target.value);
   }, []);
@@ -37,11 +45,11 @@ export default function CreateForm({ status, addJobApp, setShowForm }) {
       position,
       description,
       status,
-      date: '09/21/19',
+      date: getDate(),
     });
     setShowForm(false);
     setShowError(false);
-  }, [addJobApp, setShowError, setShowForm, company,
+  }, [addJobApp, getDate, setShowError, setShowForm, company,
     position, description, status]);
 
   return (
