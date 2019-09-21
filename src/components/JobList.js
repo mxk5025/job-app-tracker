@@ -7,6 +7,7 @@ export default function JobList({jobs}) {
     <ul>
       { jobs.map(job =>
         <JobApp
+          key={job.company + job.position}
           company={job.company}
           position={job.position}
           description={job.description}
