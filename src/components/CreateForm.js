@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import './CreateForm.css';
 
-export default function CreateForm({ status, addJobApp }) {
+export default function CreateForm({ status, addJobApp, setShowForm }) {
   const [company, setCompany] = useState('');
   const [position, setPosition] = useState('');
   const [description, setDescription] = useState('');
@@ -28,7 +28,8 @@ export default function CreateForm({ status, addJobApp }) {
       status,
       date: '09/21/19',
     });
-  }, [addJobApp, company, position, description, status]);
+    setShowForm(false);
+  }, [addJobApp, setShowForm, company, position, description, status]);
 
   return (
     <div className="CreateForm">
@@ -72,4 +73,5 @@ export default function CreateForm({ status, addJobApp }) {
 CreateForm.propTypes = {
   status: PropTypes.string.isRequired,
   addJobApp: PropTypes.func.isRequired,
+  setShowForm: PropTypes.func.isRequired,
 };

@@ -11,7 +11,13 @@ export default function CreateJobApp({ status, addJobApp }) {
         Create Form
       </button>
       { showForm
-        && <CreateForm status={status} addJobApp={addJobApp} />}
+        && (
+          <CreateForm
+            status={status}
+            addJobApp={addJobApp}
+            setShowForm={setShowForm}
+          />
+        )}
     </div>
   );
 }
