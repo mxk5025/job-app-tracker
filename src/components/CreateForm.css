@@ -1,6 +1,6 @@
 .CreateForm form {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   position: absolute;
   z-index: 1;
   background: #ffcbb5;
@@ -18,12 +18,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 24vw;
 }
 
 .DescriptionContainer textarea {
   min-height: 20px;
-  width: 24vw;
   resize: vertical;
+  width: 22vw;
 }
 
 .SubmitButton {
