@@ -26,11 +26,22 @@ export default function JobApp({
           <b>Date:&nbsp;</b>
           <span id="tabbed">{date}</span>
         </li>
-        <li onClick={e => {e.target.style={overflowY: "hidden",
-        height: "auto"}; console.log(e.target)}} onBlur={e => {e.target.style={overflowY: "auto",
-        height: "48pt"}}} >
+        <li>
           <b>Description:&nbsp;</b>
-          <p id="description">{description}</p>
+          <textarea
+            id="description"
+            onFocus={(e) => {
+              e.target.style.overflowY = 'scroll';
+              e.target.style.height = '144pt';
+            }}
+            onBlur={(e) => {
+              e.target.style.overflowY = 'auto';
+              e.target.style.height = '48pt';
+            }}
+            contentEditable={false}
+            readOnly
+            defaultValue={description}
+          />
         </li>
       </ul>
     </li>
