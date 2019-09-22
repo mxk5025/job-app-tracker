@@ -10,7 +10,7 @@ export default function CreateForm({ status, addJobApp, setShowForm }) {
   const [company, setCompany] = useState('');
   const [position, setPosition] = useState('');
   const [description, setDescription] = useState('');
-  const [showError, setShowError] = useState(false);
+  const [message, setMessage] = useState('');
 
   const getDate = useCallback(() => {
     const today = new Date();
@@ -34,10 +34,13 @@ export default function CreateForm({ status, addJobApp, setShowForm }) {
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
+    if (company.length > 30 || position.length > 30) {
+      setMessage('Invalid company or position length.');
+    }
     if (!inputPattern.test(company)
         || !inputPattern.test(position)
         || !areaPattern.test(description)) {
-      setShowError(true);
+      setMessage('Invalid input found.');
       return;
     }
     addJobApp({
@@ -48,15 +51,15 @@ export default function CreateForm({ status, addJobApp, setShowForm }) {
       date: getDate(),
     });
     setShowForm(false);
-    setShowError(false);
-  }, [addJobApp, getDate, setShowError, setShowForm, company,
+    setMessage('');
+  }, [addJobApp, getDate, setMessage, setShowForm, company,
     position, description, status]);
 
   return (
     <div className="CreateForm">
-      { showError
+      { message.length > 0
         && (
-          <ErrorMessage value="Invalid job application." />
+          <ErrorMessage value={message} />
         )}
       <form onSubmit={handleSubmit}>
         <div className="InputContainer">
@@ -64,6 +67,7 @@ export default function CreateForm({ status, addJobApp, setShowForm }) {
           <input
             type="text"
             name="Company"
+            maxLength="30"
             value={company}
             onChange={handleCompany}
           />
@@ -73,6 +77,7 @@ export default function CreateForm({ status, addJobApp, setShowForm }) {
           <input
             type="text"
             name="Position"
+            maxLength="30"
             value={position}
             onChange={handlePosition}
           />

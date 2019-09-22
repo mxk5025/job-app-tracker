@@ -8,7 +8,7 @@ export default function JobApp({
   const [color] = useState(
     status === 'Applied' ? '#c74e9f'
       : status === 'Rejected' ? '#ff2e43'
-        : status === 'Interview' ? '#c9c300'
+        : status === 'Interview' ? '#4466ee'
           : status === 'Offer' ? '#88e234' : '#000'
   );
   return (

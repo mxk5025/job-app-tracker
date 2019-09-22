@@ -11,7 +11,6 @@ export default function JobList({
 }) {
   return (
     <div className="JobList">
-      <h2>{status}</h2>
       <CreateJobApp status={status} addJobApp={addJobApp} />
       <ul>
         { jobs.filter((job) => job.status === status).map((job) => (
