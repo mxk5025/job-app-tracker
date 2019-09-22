@@ -1,6 +1,6 @@
 {
-  "name": "practice-react-web-app",
-  "version": "0.1.0",
+  "name": "job-app-tracker",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.4.2",
