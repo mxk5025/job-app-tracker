@@ -24,5 +24,6 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
     'no-nested-ternary': 'off',
+    'no-plusplus': ['error', { 'allowForLoopAfterthoughts': true }]
   },
 };

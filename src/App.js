@@ -2,38 +2,6 @@ import React, { useState, useCallback } from 'react';
 import JobList from './components/JobList';
 import './App.css';
 
-
-// const mockApps = [
-//   {
-//     company: 'Apple',
-//     position: 'Software Engineer',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-//     status: 'Applied',
-//     date: '09/21/19',
-//   },
-//   {
-//     company: 'Google',
-//     position: 'Software Engineer II',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-//     status: 'Rejected',
-//     date: '09/21/19',
-//   },
-//   {
-//     company: 'Facebook',
-//     position: 'Software Engineer IV',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-//     status: 'Interview',
-//     date: '09/21/19',
-//   },
-//   {
-//     company: 'Lyft',
-//     position: 'Senior Software Engineer',
-//     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-//     status: 'Offer',
-//     date: '09/21/19',
-//   },
-// ];
-
 export default function App() {
   const [statusLists] = useState([
     'Applied', 'Rejected', 'Interview', 'Offer',
@@ -45,6 +13,18 @@ export default function App() {
     setJobApps(copyJobApps);
   }, [jobApps, setJobApps]);
 
+  const removeJobApp = useCallback((jobApp) => {
+    const jobsCopy = [...jobApps];
+    for (let i = jobsCopy.length - 1; i >= 0; i--) {
+      const j = jobsCopy[i];
+      if (j === jobApp) {
+        jobsCopy.splice(i, 1);
+        break;
+      }
+    }
+    setJobApps(jobsCopy);
+  }, [jobApps]);
+
   return (
     <div className="App">
       <h1>Job Application Tracker</h1>
@@ -55,6 +35,7 @@ export default function App() {
             jobs={jobApps}
             status={statusList}
             addJobApp={addJobApp}
+            removeJobApp={removeJobApp}
           />
         ))}
       </div>
