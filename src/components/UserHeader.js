@@ -1,8 +1,8 @@
-import React from './react';
-import PropTypes from 'prop-types';
+import React, { useState, useCallback } from 'react';
+// import PropTypes from 'prop-types';
 import './UserHeader.css';
 
-export default function UserHeader({})
+export default function UserHeader() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -12,12 +12,12 @@ export default function UserHeader({})
 
   const handlePassword = useCallback((e) => {
     setPassword(e.target.value);
-  }, [])
+  }, []);
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
 
-  })
+  }, []);
 
   return(
     <div className="UserHeader">
