@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/job-app-tracker/static/css/main.3f0f84de.chunk.css",
+    "main.js": "/job-app-tracker/static/js/main.301bc016.chunk.js",
+    "main.js.map": "/job-app-tracker/static/js/main.301bc016.chunk.js.map",
+    "runtime~main.js": "/job-app-tracker/static/js/runtime~main.4aa846ab.js",
+    "runtime~main.js.map": "/job-app-tracker/static/js/runtime~main.4aa846ab.js.map",
+    "static/js/2.6f51dee8.chunk.js": "/job-app-tracker/static/js/2.6f51dee8.chunk.js",
+    "static/js/2.6f51dee8.chunk.js.map": "/job-app-tracker/static/js/2.6f51dee8.chunk.js.map",
+    "index.html": "/job-app-tracker/index.html",
+    "precache-manifest.9e97a33c931aad52b7eeae7a49172455.js": "/job-app-tracker/precache-manifest.9e97a33c931aad52b7eeae7a49172455.js",
+    "service-worker.js": "/job-app-tracker/service-worker.js",
+    "static/css/main.3f0f84de.chunk.css.map": "/job-app-tracker/static/css/main.3f0f84de.chunk.css.map"
+  }
+}
