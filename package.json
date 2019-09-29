@@ -2,7 +2,7 @@
   "name": "job-app-tracker",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://khacoding.com/job-app-tracker",
+  "homepage": "https://michael-kha.com/job-app-tracker",
   "bugs": "https://github.com/mxk5025/job-app-tracker/issues",
   "dependencies": {
     "@material-ui/core": "^4.4.2",
